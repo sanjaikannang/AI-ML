@@ -1,6 +1,4 @@
-# AI and Python Programming Course
-
-This repository contains the course material and exercises for learning Artificial Intelligence (AI) and Python programming. The course is divided into several modules that cover both foundational concepts and advanced topics in AI, machine learning (ML), deep learning (DL), and Python programming.
+# Artificial Intelligence & Machine learning 
 
 ## Table of Contents
 
@@ -13,7 +11,6 @@ This repository contains the course material and exercises for learning Artifici
 
 ## Module 0: AI for Everyone
 
-In this module, we will provide an introduction to basic AI concepts, how it is used in industries, and an overview of deep learning applications.
 
 ### Topics Covered:
 - **What is AI?**
@@ -27,7 +24,6 @@ In this module, we will provide an introduction to basic AI concepts, how it is 
 
 ## Module 1: Introduction to AI and Current Trends
 
-This module provides a formal introduction to AI, discusses current industry practices, and teaches how to build and deploy state-of-the-art AI products.
 
 ### Topics Covered:
 - **Introduction to AI**
@@ -39,9 +35,8 @@ This module provides a formal introduction to AI, discusses current industry pra
 
 ---
 
-## Module 2: Introduction to Python (Basic)
+## Module 2:  Introduction to Python
 
-This module will cover the basics of Python programming, including essential concepts such as data types, loops, data structures, and functions, followed by assessments and assignments.
 
 ### Topics Covered:
 - **Python Basics**
@@ -63,9 +58,9 @@ This module will cover the basics of Python programming, including essential con
 
 ## Module 3: Introduction to Python (Advanced)
 
-Building on the essential basics of Python, this module will cover advanced Python concepts such as comprehensions, file handling, regular expressions, object-oriented programming (OOP), and more.
 
 ### Topics Covered:
+- **Python - Advanced**
 - **Functions as Arguments**
 - **List Comprehension**
 - **File Handling**
@@ -80,9 +75,3 @@ Building on the essential basics of Python, this module will cover advanced Pyth
 
 ---
 
-## How to Use This Repository
-
-Clone this repository to get access to the course materials, code examples, and exercises. Each module will have separate directories with detailed explanations, code files, and assignments.
-
-```bash
-git clone https://github.com/yourusername/AI-and-Python-Course.git
