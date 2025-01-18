@@ -1,0 +1,726 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Module 0</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17f5a1d7-dea4-8082-b2db-ca4253dbc60e" class="page sans"><header><h1 class="page-title">Module 0</h1><p class="page-description"></p></header><div class="page-body"><h2 id="17f5a1d7-dea4-808e-9d86-c80beb5dc3fe" class=""><strong>Module 0: AI for Everyone</strong></h2><p id="17f5a1d7-dea4-8008-b7f4-f8f781b05d5a" class="">
+</p><ul id="17f5a1d7-dea4-806d-b59e-ce25e92ff587" class="toggle"><li><details open=""><summary><strong>Definition of artificial intelligence</strong></summary><p id="17f5a1d7-dea4-8038-9f59-c54b9a07e35c" class=""><strong>Artificial Intelligence</strong>, refers to the ability of a machine or computer system to perform tasks that typically require human intelligence. These tasks include things like recognizing speech, understanding language, making decisions, solving problems, and learning from experience. AI aims to create machines that can simulate human-like intelligence.<br/><br/></p></details></li></ul><ul id="17f5a1d7-dea4-8071-b793-d37f073ccb62" class="toggle"><li><details open=""><summary><strong>Historical context and evolution of AI</strong></summary><h3 id="17f5a1d7-dea4-802c-9561-c69830f2cbcd" class=""><strong>1950s-1960s: Beginnings of AI :</strong></h3><ul id="17f5a1d7-dea4-8061-8f56-d0fa991df4c8" class="bulleted-list"><li style="list-style-type:disc"><strong>Alan Turing</strong> (a British mathematician) proposed the idea of machines that could think in his famous <strong>Turing Test</strong> (1950). If a machine can talk to a person and the person can&#x27;t tell it&#x27;s a machine, it passes the test.</li></ul><ul id="17f5a1d7-dea4-8081-a739-da9e37127e1b" class="bulleted-list"><li style="list-style-type:disc">It started with simple programs that could play chess and solve basic math.</li></ul><ul id="17f5a1d7-dea4-80bc-8b86-f260f87a8d9d" class="bulleted-list"><li style="list-style-type:disc">The term &quot;Artificial Intelligence&quot; was coined at Dartmouth College in 1956.</li></ul><h3 id="17f5a1d7-dea4-8076-8b55-ce5c122fa9b1" class=""><strong>1970s-1980s: AI Winter :</strong></h3><ul id="17f5a1d7-dea4-804e-8d88-f1d47b4f6fce" class="bulleted-list"><li style="list-style-type:disc">Despite early excitement, progress slowed due to limitations in technology and unrealistic expectations. This period is called the &quot;<strong>AI Winter</strong>.&quot; Funding and interest in AI research decreased.</li></ul><ul id="17f5a1d7-dea4-805b-a97e-c8fd71829207" class="bulleted-list"><li style="list-style-type:disc"><strong>IBM’s Deep Blue</strong> defeated chess champion Garry Kasparov in 1997, showcasing the power of AI.</li></ul><h3 id="17f5a1d7-dea4-80e5-a0ee-d47ff95badcc" class=""><strong>1990s-2000s: The Rise of Machine Learning :</strong></h3><ul id="17f5a1d7-dea4-8060-ac80-fc28f6f7fb7f" class="bulleted-list"><li style="list-style-type:disc">AI research started to shift toward <strong>machine learning</strong> (ML), which is a subset of AI where machines learn from data, rather than being explicitly programmed. This led to improvements in AI applications like email filtering and speech recognition.</li></ul><h3 id="17f5a1d7-dea4-801b-a6c3-dc6b1accd036" class="">2010s-present: Deep Learning and Big Data</h3><ul id="17f5a1d7-dea4-800e-984b-d9d6284bfda2" class="bulleted-list"><li style="list-style-type:disc">With the explosion of data and advances in computing power, especially through <strong>deep learning</strong> (a type of machine learning using neural networks), AI has made major strides.</li></ul><ul id="17f5a1d7-dea4-80a8-9e05-dc36db32a365" class="bulleted-list"><li style="list-style-type:disc">AI is now used in many real-world applications, such as self-driving cars, virtual assistants (like Siri and Alexa), and medical diagnostics.<br/><br/></li></ul></details></li></ul><ul id="17f5a1d7-dea4-805e-9505-fa3eca6fa6fc" class="toggle"><li><details open=""><summary><strong>Types of AI:</strong></summary><h3 id="17f5a1d7-dea4-80ab-8868-ca8aea2fdb22" class=""><strong>Narrow/Weak AI vs General/Strong AI :</strong></h3><ul id="17f5a1d7-dea4-8071-af24-d979bfefe4c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Narrow AI (Weak AI) :</strong><br/>This type of AI is designed to perform a specific task, like playing chess, recommending movies, or identifying objects in images. It&#x27;s called &quot;weak&quot; because it is focused on one area and cannot think beyond that.<br/><br/><strong>Example:</strong> Google Assistant, Siri, self-driving cars (they can drive but can’t do anything else outside that task).</li></ul><p id="17f5a1d7-dea4-809a-b4ac-e331dfe7d129" class="">
+</p><ul id="17f5a1d7-dea4-803d-b31a-d51932cfbed7" class="bulleted-list"><li style="list-style-type:disc"><strong>General AI (Strong AI) :</strong><br/>This is an AI that can perform any intellectual task that a human can do. It can learn, understand, and apply knowledge across multiple domains. We don’t have true General AI yet, but it’s a goal for researchers.<br/><br/><strong>Example:</strong> A robot that could learn to play chess, paint, write poems, and hold a conversation — all with the same level of intelligence as a human.</li></ul><p id="17f5a1d7-dea4-80d1-8583-d8ede38d3329" class="">
+</p><h3 id="17f5a1d7-dea4-8023-b890-f0b31530fb88" class=""><strong>Reactive Machines vs Limited Memory vs Theory of Mind vs Self-Aware AI :</strong></h3><ul id="17f5a1d7-dea4-8074-90e5-cc6e998b4b72" class="bulleted-list"><li style="list-style-type:disc"><strong>Reactive Machines :</strong><br/>These AIs can only respond to specific situations with pre-programmed actions. They don’t store memories or learn from experience. They react in a specific way based on the input they get.<br/><br/><strong>Example:</strong> IBM’s Deep Blue, which played chess. It reacted to moves on the board but didn’t learn from past games.</li></ul><p id="17f5a1d7-dea4-8009-a753-de80ca2b5280" class="">
+</p><ul id="17f5a1d7-dea4-8080-bf87-fa8937a10989" class="bulleted-list"><li style="list-style-type:disc"><strong>Limited Memory :</strong><br/>This AI can learn from past experiences and use that knowledge to make better decisions in the future, but its memory is limited. It doesn’t retain everything it learns forever.<br/><br/><strong>Example:</strong> Self-driving cars use limited memory to make decisions based on past driving experiences (e.g., avoiding obstacles).</li></ul><p id="17f5a1d7-dea4-802d-b8fd-e5b7aa235ad6" class="">
+</p><ul id="17f5a1d7-dea4-8085-bfc0-c42a27a418ad" class="bulleted-list"><li style="list-style-type:disc"><strong>Theory of Mind :</strong><br/>In the future, AI may develop a &quot;Theory of Mind,&quot; meaning it would understand human emotions, beliefs, intentions, and thoughts. This type of AI would be able to interact with humans in a more natural, empathetic way.<br/><br/><strong>Example:</strong> This is still a theoretical concept. AI systems could eventually interpret human emotions based on facial expressions or tone of voice.<br/><br/></li></ul><ul id="17f5a1d7-dea4-80e5-a4cd-e64935541270" class="bulleted-list"><li style="list-style-type:disc"><strong>Self-Aware AI :</strong><br/>The most advanced level of AI. This AI would not only understand its own thoughts and emotions but also have a sense of self. It would be aware of its existence and make decisions based on that self-awareness.<br/><br/><strong>Example:</strong> This type of AI doesn’t exist yet, and there are ethical and philosophical questions about what it would mean for AI to have self-awareness.<br/><br/></li></ul></details></li></ul><ul id="17f5a1d7-dea4-80e2-934a-f913c7ed0f6a" class="toggle"><li><details open=""><summary><strong>Real-world examples of current AI systems</strong></summary><ol type="1" id="17f5a1d7-dea4-8017-a4f5-fe19a28982f0" class="numbered-list" start="1"><li><strong>Voice Assistants:</strong></li></ol><ul id="17f5a1d7-dea4-8021-8f47-eab24f1b232f" class="bulleted-list"><li style="list-style-type:disc"><strong>Siri, Alexa, Google Assistant</strong> – These virtual assistants use AI to understand your voice, interpret commands, and perform tasks like setting alarms, playing music, or controlling smart devices in your home.</li></ul><p id="17f5a1d7-dea4-80f0-ad4e-c7b7cd8692bd" class="">
+</p><ol type="1" id="17f5a1d7-dea4-808b-8ba0-f996e4b48751" class="numbered-list" start="2"><li><strong>Self-Driving Cars:</strong></li></ol><ul id="17f5a1d7-dea4-8041-a4dc-fcca64aa6681" class="bulleted-list"><li style="list-style-type:disc">Companies like <strong>Tesla, Waymo, and Uber</strong> are developing AI-driven cars that can navigate and make decisions while driving. They use sensors, cameras, and machine learning algorithms to recognize objects, pedestrians, and other vehicles.</li></ul><p id="17f5a1d7-dea4-8075-8bb8-f5baae0777c2" class="">
+</p><ol type="1" id="17f5a1d7-dea4-801f-9d8e-efe00a64800c" class="numbered-list" start="3"><li><strong>Recommendation Systems:</strong></li></ol><ul id="17f5a1d7-dea4-80dd-84fe-f747bc18ff41" class="bulleted-list"><li style="list-style-type:disc">Platforms like <strong>Netflix, YouTube, and Amazon</strong> use AI to recommend movies, videos, and products based on what you’ve watched or purchased before. AI algorithms predict what you might like next.</li></ul><p id="17f5a1d7-dea4-8097-8038-fd301502fe20" class="">
+</p><ol type="1" id="17f5a1d7-dea4-803c-a501-c7573a71e74d" class="numbered-list" start="4"><li><strong>Medical AI:</strong></li></ol><ul id="17f5a1d7-dea4-8027-821b-c776ecd7c9fe" class="bulleted-list"><li style="list-style-type:disc">AI is being used to assist doctors with diagnoses, analyze medical images (such as X-rays or MRIs), and even predict potential health issues. For example, AI has been used to identify early signs of cancer or heart disease more accurately than some human doctors.</li></ul><p id="17f5a1d7-dea4-808f-9c70-fd8235b13e81" class="">
+</p><ol type="1" id="17f5a1d7-dea4-8086-9ade-d12c5dedc002" class="numbered-list" start="5"><li><strong>Chatbots and Customer Service:</strong></li></ol><ul id="17f5a1d7-dea4-805a-9754-c2f1f25bf89a" class="bulleted-list"><li style="list-style-type:disc"><strong>Chatbots</strong> on websites or customer service lines use AI to answer questions, provide information, and assist with issues, helping businesses serve customers without human intervention.<br/><br/></li></ul></details></li></ul><ul id="17f5a1d7-dea4-80cc-8ccf-d9d29a7f5466" class="toggle"><li><details open=""><summary><strong>The Terminology of AI</strong></summary><ol type="1" id="17f5a1d7-dea4-809f-8b9b-d2dd447e468b" class="numbered-list" start="1"><li><strong>Artificial Intelligence (AI):</strong></li></ol><ul id="17f5a1d7-dea4-805f-aabc-cbda05e6ae93" class="bulleted-list"><li style="list-style-type:disc">AI refers to creating machines or systems that can perform tasks requiring human intelligence. These tasks could include things like learning, problem-solving, understanding language, or recognizing images.</li></ul><p id="17f5a1d7-dea4-80d0-b536-d831352616ca" class="">
+</p><ol type="1" id="17f5a1d7-dea4-8084-bb67-fc7855cfdcbb" class="numbered-list" start="2"><li><strong>Machine Learning (ML):</strong></li></ol><ul id="17f5a1d7-dea4-80fd-bbd6-cc343b19a1dd" class="bulleted-list"><li style="list-style-type:disc">Machine Learning is a type of AI where machines learn from data. Instead of being programmed with exact instructions, machines &quot;learn&quot; patterns from data and use those patterns to make decisions or predictions.<p id="17f5a1d7-dea4-80f6-a2da-dc74c31ef5b3" class=""><strong>Example:</strong> Spam filters in email services that learn to identify spam messages based on past data.</p><p id="17f5a1d7-dea4-8013-855e-e14c6d76c94e" class="">
+</p></li></ul><ol type="1" id="17f5a1d7-dea4-80ef-93c0-c1652aee6ebb" class="numbered-list" start="3"><li><strong>Deep Learning (DL):</strong></li></ol><ul id="17f5a1d7-dea4-8086-bb3c-cc875f531a61" class="bulleted-list"><li style="list-style-type:disc">Deep Learning is a more advanced subset of Machine Learning. It uses large neural networks with many layers to analyze data and make decisions. It&#x27;s used for more complex tasks like image recognition and natural language processing.<p id="d18d0aca-1c14-4177-9898-6e68b657f1e4" class=""><strong>Example:</strong> Deep learning is behind the technology that powers self-driving cars, enabling them to recognize pedestrians and road signs.</p><p id="6c0b2b00-dbf3-44a2-8f68-145702cdfd6d" class="">
+</p></li></ul><ol type="1" id="17f5a1d7-dea4-802c-af66-e26f49e43e3a" class="numbered-list" start="4"><li><strong>Neural Networks:</strong></li></ol><ul id="17f5a1d7-dea4-8053-99dc-dae49f9f8181" class="bulleted-list"><li style="list-style-type:disc">These are algorithms inspired by the human brain. They consist of interconnected layers of nodes (neurons) that process information. Neural networks are used in deep learning to solve problems like recognizing images or translating languages.<p id="17f5a1d7-dea4-8097-be2c-f531a6b12159" class="">
+</p></li></ul><ol type="1" id="17f5a1d7-dea4-8051-ae72-d76012d1659a" class="numbered-list" start="5"><li><strong>Supervised Learning:</strong></li></ol><ul id="17f5a1d7-dea4-80d0-929e-db876cc4a4ed" class="bulleted-list"><li style="list-style-type:disc">A type of machine learning where the model is trained on labeled data (data with known answers) to learn patterns and make predictions on new data.<p id="b9434ab1-eb2f-4e5d-b383-81b405a9adf4" class=""><strong>Example:</strong> Predicting house prices based on previous data about houses (price, size, location, etc.).</p><p id="17f5a1d7-dea4-80ff-bb15-c4436b20cc64" class="">
+</p></li></ul><ol type="1" id="17f5a1d7-dea4-8036-88a8-cfccf5ac632a" class="numbered-list" start="6"><li><strong>Unsupervised Learning:</strong></li></ol><ul id="17f5a1d7-dea4-80cc-b2ad-ebf015e9ca4e" class="bulleted-list"><li style="list-style-type:disc">A type of machine learning where the model works with data that has no labels. It tries to identify patterns or structure in the data on its own.<p id="5bbca79d-c493-453e-a144-f53cbdb77521" class=""><strong>Example:</strong> Grouping customers by their buying habits without knowing the exact categories in advance.</p><p id="17f5a1d7-dea4-801b-88d8-cf984182d66f" class="">
+</p></li></ul><ol type="1" id="17f5a1d7-dea4-8052-b650-dc339f793f18" class="numbered-list" start="7"><li><strong>Reinforcement Learning:</strong></li></ol><ul id="17f5a1d7-dea4-80cf-8b98-c229d086c19c" class="bulleted-list"><li style="list-style-type:disc">In this type of machine learning, the model learns by interacting with an environment and receiving feedback (rewards or punishments) for its actions. It aims to maximize its cumulative reward over time.<p id="ee4a8d81-090d-4c33-b005-1d81a5f53fa8" class=""><strong>Example:</strong> Training a robot to walk by rewarding it when it takes steps and punishing it when it falls.</p><p id="17f5a1d7-dea4-802b-8a35-c4ed3f269fe4" class="">
+</p></li></ul></details></li></ul><ul id="17f5a1d7-dea4-80f5-b701-c450169809f9" class="toggle"><li><details open=""><summary><strong>The Power of Machine Learning in the Current Era</strong></summary><p id="17f5a1d7-dea4-80a0-a547-fac26cd8c9d3" class="">Machine learning has become incredibly powerful in recent years because of a few key factors:</p><ul id="17f5a1d7-dea4-8090-a67a-f2c38d1de2c9" class="bulleted-list"><li style="list-style-type:disc"><strong>Big Data:</strong></li></ul><p id="17f5a1d7-dea4-801c-af0f-cf7bc1edfdb4" class="">                   → There&#x27;s more data available now than ever before. Machine learning models perform better when they have large amounts of data to learn from. The more data, the more accurate the predictions and insights.</p><p id="17f5a1d7-dea4-801e-aeab-f4146c7c4b71" class="">
+</p><ul id="17f5a1d7-dea4-80a4-84aa-d5ea347d1f2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Computing Power:</strong></li></ul><p id="17f5a1d7-dea4-8034-abe8-e9954c65d917" class="">                   → Advances in computing power (like faster processors and specialized hardware like GPUs) have made it possible to train machine learning models much more quickly and on larger datasets.</p><p id="17f5a1d7-dea4-80db-b206-c7dcca8b3adf" class="">
+</p><ul id="17f5a1d7-dea4-80f0-bdb0-de480d53ad46" class="bulleted-list"><li style="list-style-type:disc"><strong>Algorithms and Techniques:</strong></li></ul><p id="17f5a1d7-dea4-80a1-9e0d-de7ee852ccbb" class="">                   → Machine learning algorithms have become more advanced and efficient, allowing them to solve more complex problems. Modern techniques like deep learning, which uses neural networks, have made AI more effective in areas like image recognition and natural language processing.</p><p id="17f5a1d7-dea4-8001-852e-e8ce7a51a15d" class="">
+</p><ul id="17f5a1d7-dea4-806e-844e-c6ef3a77c913" class="bulleted-list"><li style="list-style-type:disc"><strong>Real-World Applications:</strong></li></ul><p id="17f5a1d7-dea4-8003-aede-e38ebc39afb7" class="">Machine learning is now being used in many fields:</p><p id="17f5a1d7-dea4-80a1-b726-f8f4e4163073" class="">             → <strong>Healthcare:</strong> Predicting diseases, diagnosing medical conditions, and analyzing medical images.</p><p id="17f5a1d7-dea4-8048-b117-f4660d751b81" class="">             → <strong>Finance:</strong> Detecting fraud, managing investments, and automating trading.</p><p id="17f5a1d7-dea4-8037-84b6-c87fa5420b8b" class="">             → <strong>Retail:</strong> Personalized recommendations, inventory management, and customer service chatbots.</p><p id="17f5a1d7-dea4-8039-b2da-c34caefc8ce5" class="">             → <strong>Transportation:</strong> Self-driving cars, traffic prediction, and route optimization.</p><p id="17f5a1d7-dea4-8065-982f-cca93d90dae8" class="">
+</p></details></li></ul><ul id="17f5a1d7-dea4-80c1-9e15-fc0de8a0c6c4" class="toggle"><li><details open=""><summary><strong>The Limitations of Machine Learning</strong></summary><p id="17f5a1d7-dea4-8022-a0de-f7dcc3ce85e3" class="">While machine learning is powerful, it also has some important limitations:</p><ul id="17f5a1d7-dea4-80b5-a9e2-f3ea4bba90cd" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Dependency:</strong></li></ul><p id="17f5a1d7-dea4-8019-931a-dfb64a65846c" class="">           →  Machine learning models require large amounts of data to train effectively. If there’s not enough quality data, the model won’t perform well.</p><p id="17f5a1d7-dea4-807a-a23a-cbd9e418acff" class=""><strong>Example:   </strong>A recommendation system might not give accurate suggestions if it hasn’t been fed enough data about your preferences.</p><p id="17f5a1d7-dea4-8090-94c8-fbf6be213231" class="">
+</p><ul id="17f5a1d7-dea4-802f-bf25-f8f4fa4985fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Bias in Data:</strong></li></ul><p id="17f5a1d7-dea4-80f2-b046-da455aa18369" class="">           →  If the data used to train a machine learning model is biased, the model can inherit and even amplify those biases.</p><p id="17f5a1d7-dea4-802f-9806-d83ead8ed329" class=""><strong>Example:   </strong>If a facial recognition system is trained mostly on light-skinned faces, it might perform poorly on darker-skinned faces.</p><p id="17f5a1d7-dea4-8038-82b1-dddf7388de2d" class="">
+</p><ul id="17f5a1d7-dea4-80fd-a61a-dec368e3541f" class="bulleted-list"><li style="list-style-type:disc"><strong>Interpretability:</strong></li></ul><p id="17f5a1d7-dea4-8022-9856-f158bbbfedec" class="">           →  Some machine learning models, especially deep learning models, are like “black boxes.” This means it&#x27;s hard to understand how they make decisions, which can be problematic in fields like healthcare or finance where explainability is important.</p><p id="17f5a1d7-dea4-8061-9b8b-c7b00ebd9d42" class="">
+</p><ul id="17f5a1d7-dea4-8084-8300-cbe621dc9a2a" class="bulleted-list"><li style="list-style-type:disc"><strong>Overfitting:</strong></li></ul><p id="17f5a1d7-dea4-8050-9e75-fa9bd0d96cc5" class="">           →  If a model learns too much from the training data, it might become too specific and not generalize well to new, unseen data. This is called overfitting.</p><p id="17f5a1d7-dea4-80f1-9e5a-f8f97944918d" class=""><strong>Example:   </strong>A model that learns to identify a particular type of dog breed may struggle to recognize the breed in different environments.</p><p id="17f5a1d7-dea4-80a9-90ec-d46a2aa7b77a" class="">
+</p><ul id="17f5a1d7-dea4-8044-b93b-c61ee8efdf91" class="bulleted-list"><li style="list-style-type:disc"><strong>Lack of Common Sense:</strong></li></ul><p id="17f5a1d7-dea4-80e4-a52d-c0bbefdf5c99" class="">           →  While machine learning models are great at learning patterns from data, they don’t possess common sense or real-world understanding. They may make predictions based only on the data they were trained on, without the ability to reason beyond that data.</p><p id="17f5a1d7-dea4-805d-8da4-e0e934aa2de2" class="">
+</p></details></li></ul><ul id="17f5a1d7-dea4-8013-84ba-fc11af7358aa" class="toggle"><li><details open=""><summary><strong>A Soft Introduction to Deep Learning</strong></summary><p id="17f5a1d7-dea4-80e9-a652-fba1016e2867" class="">Deep Learning is a special area of machine learning that is particularly good at dealing with complex data like images, sound, and text.</p><ul id="17f5a1d7-dea4-80da-9f2f-c5934fab0161" class="bulleted-list"><li style="list-style-type:disc"><strong>What is Deep Learning?</strong></li></ul><p id="17f5a1d7-dea4-80eb-87fe-fb114782e4cd" class="">                →  Deep learning uses neural networks with many layers (hence the &quot;deep&quot; part) to model complex patterns in data. The deeper the network, the more it can learn and the more complex the tasks it can perform.</p><p id="17f5a1d7-dea4-8010-9cef-c2cc29979e49" class="">
+</p><ul id="17f5a1d7-dea4-8046-8eae-d0bfe28c0d25" class="bulleted-list"><li style="list-style-type:disc"><strong>How Does it Work?</strong></li></ul><p id="17f5a1d7-dea4-8048-8858-ca75387c4383" class="">                →  Deep learning models consist of multiple layers of neurons that process information in a way that&#x27;s inspired by the human brain. Each layer detects different features of the data (e.g., edges in an image, or words in a sentence) and passes the processed data to the next layer.</p><p id="17f5a1d7-dea4-803b-8fce-d26643273211" class="">
+</p><ul id="17f5a1d7-dea4-80b7-9d45-ec3474ea5498" class="bulleted-list"><li style="list-style-type:disc"><strong>Why is it Important?</strong></li></ul><p id="17f5a1d7-dea4-8065-9e95-e21b9f0dac2b" class="">Deep learning has achieved amazing results in areas like:</p><p id="17f5a1d7-dea4-8000-bdd9-cc2856d9d491" class="">                →  <strong>Image recognition: </strong>Deep learning powers facial recognition, object detection, and medical image analysis.</p><p id="17f5a1d7-dea4-8059-99dd-c47cfc587225" class="">
+</p><p id="17f5a1d7-dea4-80f9-b590-c0b278d7c497" class="">                →  <strong>Speech recognition:</strong> Virtual assistants like Siri and Alexa use deep learning to understand speech and respond.<br/><br/></p><p id="17f5a1d7-dea4-80d6-a5cf-cee5e8a8d847" class="">                → <strong>Natural language processing:</strong> Deep learning helps machines understand and generate human language, like in translation tools and chatbots.</p><p id="17f5a1d7-dea4-80bc-9135-df9a402d8d4d" class="">
+</p><p id="17f5a1d7-dea4-80f6-b8f0-f950491dc67b" class="">Deep learning requires a lot of data and computing power but is incredibly powerful for tasks that are difficult for traditional machine learning models.</p><p id="17f5a1d7-dea4-8057-b85b-d20ac8efc74b" class="">
+</p></details></li></ul><ul id="17f5a1d7-dea4-80c3-97f1-dba6a75d358f" class="toggle"><li><details open=""><summary><strong>Some Cool Applications of Deep Learning</strong></summary><p id="17f5a1d7-dea4-801d-800d-dc0f5f6a18a8" class="">Deep learning is behind some of the most exciting and advanced AI technologies today. Here are some cool examples:</p><ul id="17f5a1d7-dea4-8046-b5cc-e1195951501b" class="bulleted-list"><li style="list-style-type:disc"><strong>Self-Driving Cars: </strong>Companies like Tesla and Waymo use deep learning to navigate roads safely.</li></ul><p id="17f5a1d7-dea4-801a-bfc4-f5eaf83e1016" class="">
+</p><ul id="17f5a1d7-dea4-80d2-804a-d237e8adbe85" class="bulleted-list"><li style="list-style-type:disc"><strong>Image Recognition: </strong>Google Photos uses deep learning to recognize and categorize your photos, even by specific people or objects.</li></ul><p id="17f5a1d7-dea4-800e-a42c-e07ae341add3" class="">
+</p><ul id="17f5a1d7-dea4-80cf-a01a-ea8c99e251c8" class="bulleted-list"><li style="list-style-type:disc"><strong>Natural Language Processing (NLP):  </strong>Virtual assistants like Siri or Alexa, as well as automatic translators like Google Translate, rely on deep learning to understand and process language.</li></ul><p id="17f5a1d7-dea4-80ca-b371-fff9f61a4ad7" class="">
+</p><ul id="17f5a1d7-dea4-80ee-8835-fdff95cfe60f" class="bulleted-list"><li style="list-style-type:disc"><strong>AI in Art and Music:  </strong>Tools like <strong>DeepArt</strong> or AI-generated music are powered by neural networks that learn from existing works and create new content in similar styles.</li></ul><p id="17f5a1d7-dea4-8039-8756-f3c09642deac" class="">
+</p><ul id="17f5a1d7-dea4-800d-bc68-eccb18e18de2" class="bulleted-list"><li style="list-style-type:disc"><strong>Gaming AI: </strong>Deep learning has been used to train AI to play and master video games, such as <strong>AlphaGo</strong>, which defeated the world champion in the board game Go.<br/><br/><br/><strong><br/><br/></strong><br/><br/></li></ul><p id="17f5a1d7-dea4-8021-97c6-fa535bdca639" class="">
+</p><p id="17f5a1d7-dea4-8024-a335-d2c9dc0e147f" class="">
+</p><p id="17f5a1d7-dea4-805b-b4bc-e13485b4889c" class="">
+</p><p id="17f5a1d7-dea4-8023-8dd1-f4d879a69a8a" class="">
+</p><p id="17f5a1d7-dea4-80c6-a5de-f5eaa3af12be" class="">
+</p><p id="17f5a1d7-dea4-805c-8b9e-d391837f8afb" class="">
+</p><p id="17f5a1d7-dea4-80d0-ae4d-c4034bd11420" class="">
+</p></details></li></ul><p id="17f5a1d7-dea4-8046-ac5c-f5da7e6634fe" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
