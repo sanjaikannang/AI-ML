@@ -1,0 +1,698 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Module 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17f5a1d7-dea4-805d-8f50-d21b78f70202" class="page sans"><header><h1 class="page-title">Module 1</h1><p class="page-description"></p></header><div class="page-body"><h2 id="17f5a1d7-dea4-806f-8ad3-c8d25644a260" class="">MODULE 1: <strong>Introduction to AI and Current Trends</strong></h2><p id="17f5a1d7-dea4-8091-8d01-c1aa9d5ab55e" class="">
+</p><ul id="17f5a1d7-dea4-8084-bb56-ea7228136eac" class="toggle"><li><details open=""><summary><strong>Machine Learning Basics</strong></summary><p id="17f5a1d7-dea4-80ff-9421-e168b2d803e8" class=""><strong>What is Machine Learning (ML)?</strong></p><p id="17f5a1d7-dea4-80e1-bd2c-f5db94090690" class=""><strong>Machine Learning (ML)</strong> is a subset of AI. It refers to the ability of machines to <strong>learn from data</strong> without being explicitly programmed. Instead of giving a machine a set of fixed rules, you give it data, and it learns patterns from that data.</p><p id="17f5a1d7-dea4-8090-ad73-d6b13b9f856f" class="">
+</p><p id="17f5a1d7-dea4-8081-8d6b-e0358bd94f55" class="">There are three main types of Machine Learning:</p><ol type="1" id="17f5a1d7-dea4-8096-8e66-d84af3ca1dc8" class="numbered-list" start="1"><li><strong>Supervised Learning:</strong></li></ol><p id="17f5a1d7-dea4-80d3-97cb-e4c3dd5675f0" class="">             → In supervised learning, you train the model using labeled data (data that already has the correct answer). The model learns the relationship between inputs and outputs, and can later predict outputs for new, unseen inputs.</p><p id="17f5a1d7-dea4-80c2-a179-f6cd6ead84c1" class=""><strong>Example: </strong>Predicting house prices based on features like size, location, and number of bedrooms.</p><p id="17f5a1d7-dea4-80a1-b8f5-d372893c82ae" class="">
+</p><ol type="1" id="17f5a1d7-dea4-80cb-a506-df7eb3bdef1b" class="numbered-list" start="2"><li><strong>Unsupervised Learning:</strong></li></ol><p id="17f5a1d7-dea4-80af-b239-d9415b06b4bc" class="">             → In unsupervised learning, the model works with data that has no labels. The goal is to find hidden patterns or groupings in the data.</p><p id="17f5a1d7-dea4-8095-b316-deb62f951df1" class=""><strong>Example: </strong>Grouping customers by purchasing habits (without knowing in advance which groups will emerge).</p><p id="17f5a1d7-dea4-8036-b2e0-da9089ed4161" class="">
+</p><ol type="1" id="17f5a1d7-dea4-8025-9e40-e48720aa3007" class="numbered-list" start="3"><li><strong>Reinforcement Learning:</strong></li></ol><p id="17f5a1d7-dea4-80c1-bc02-f49fe6669021" class="">              → In reinforcement learning, the model learns by interacting with its environment and receiving feedback (rewards or penalties). The model takes actions and learns which actions lead to the best outcomes.</p><p id="17f5a1d7-dea4-80e7-8704-d4494d238cde" class=""><strong>Example:</strong> Training a robot to navigate a maze by rewarding it when it takes the right path.</p><p id="17f5a1d7-dea4-80d4-912a-d3b10ae534d2" class="">
+</p><p id="17f5a1d7-dea4-80b9-b05d-d68b42b7e842" class=""><strong>How does ML work?</strong></p><ul id="17f5a1d7-dea4-8037-9339-f84f1ba27608" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Collection:</strong> The first step is gathering data. This can be anything from text, images, or numbers.</li></ul><ul id="17f5a1d7-dea4-800d-b682-c8c2bd4d9ed4" class="bulleted-list"><li style="list-style-type:disc"><strong>Model Training:</strong> The data is fed into an algorithm that &quot;trains&quot; the model to recognize patterns.</li></ul><ul id="17f5a1d7-dea4-80b9-9cbd-de2a00c40f1b" class="bulleted-list"><li style="list-style-type:disc"><strong>Testing and Evaluation:</strong> The trained model is tested with new data to check how well it performs.</li></ul><ul id="17f5a1d7-dea4-80bb-bf91-c678e3f49f5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Deployment:</strong> If the model performs well, it&#x27;s put to use to make decisions or predictions.</li></ul><p id="17f5a1d7-dea4-802f-a0a9-ffd1faa0ff26" class="">
+</p></details></li></ul><ul id="17f5a1d7-dea4-800c-abce-da64a5ddc8c5" class="toggle"><li><details open=""><summary><strong>Workflow of Machine Learning Projects</strong></summary><p id="17f5a1d7-dea4-8001-bf87-cd61d53c1b36" class="">The workflow of an ML project is a step-by-step process. Here’s an overview of the typical steps:</p><ol type="1" id="17f5a1d7-dea4-80d8-9404-fd18db4f1319" class="numbered-list" start="1"><li><strong>Define the Problem: </strong>Understand the problem you&#x27;re trying to solve. For example, do you want to predict prices? Classify images? Or identify patterns in customer data?</li></ol><ol type="1" id="17f5a1d7-dea4-809c-a3a7-d4e1caf8e00a" class="numbered-list" start="2"><li><strong>Data Collection:  </strong>Gather the data needed to train your model. This data can come from many sources, such as databases, online APIs, or sensors.</li></ol><ol type="1" id="17f5a1d7-dea4-80e2-b8d4-d152200b2223" class="numbered-list" start="3"><li><strong>Data Preprocessing:   </strong>Data is rarely clean or perfect. In this step, you clean, transform, and prepare the data for training. This may include:</li></ol><ul id="17f5a1d7-dea4-802a-8b26-cd4a80cea4cb" class="bulleted-list"><li style="list-style-type:disc">Removing missing values.</li></ul><ul id="17f5a1d7-dea4-80a0-96c8-e8aa45ebdcde" class="bulleted-list"><li style="list-style-type:disc">Normalizing or scaling the data.</li></ul><ul id="17f5a1d7-dea4-80bc-8cfc-e1e4a0c290f0" class="bulleted-list"><li style="list-style-type:disc">Encoding categorical variables (like turning words into numbers).</li></ul><ol type="1" id="17f5a1d7-dea4-8017-9f61-e29f7d1142a9" class="numbered-list" start="4"><li><strong>Model Selection:  </strong>Choose a machine learning model that fits the problem. For example, if it&#x27;s a classification problem, you might use algorithms like decision trees, random forests, or logistic regression.</li></ol><ol type="1" id="17f5a1d7-dea4-8044-9896-cdfc26740738" class="numbered-list" start="5"><li><strong>Model Training:  </strong>Feed the preprocessed data into the selected model to train it. This involves finding the best parameters or settings that allow the model to learn the patterns in the data.</li></ol><ol type="1" id="17f5a1d7-dea4-8068-8274-d92f8c93cac2" class="numbered-list" start="6"><li><strong>Evaluation:  </strong>Once the model is trained, test it on new, unseen data to evaluate its performance. You might use metrics like accuracy, precision, recall, or F1-score depending on the type of problem.</li></ol><ol type="1" id="17f5a1d7-dea4-80e1-935d-cb7ebe8bdc5e" class="numbered-list" start="7"><li><strong>Model Tuning:  </strong>Based on the evaluation results, tweak the model by adjusting parameters (this is called hyperparameter tuning) or choosing a different algorithm to improve performance.</li></ol><ol type="1" id="17f5a1d7-dea4-8086-8845-efbbc7b5b42b" class="numbered-list" start="8"><li><strong>Deployment:  </strong>Once you&#x27;re satisfied with the model, deploy it in a real-world environment where it can start making predictions or decisions.</li></ol><ol type="1" id="17f5a1d7-dea4-80e7-92dd-ec201a036eba" class="numbered-list" start="9"><li><strong>Monitoring and Maintenance:  </strong>After deployment, the model needs to be monitored to ensure it continues to perform well. If the model&#x27;s performance drops, it might need to be retrained with new data.</li></ol></details></li></ul><p id="17f5a1d7-dea4-80f2-af09-eb51ea9a3915" class="">
+</p><ul id="17f5a1d7-dea4-8054-a89b-da9946307434" class="toggle"><li><details open=""><summary><strong>Introduction to Deep Learning and Differences Between ML and DL</strong></summary><p id="17f5a1d7-dea4-80c3-9254-d039ea48238b" class=""><strong>What is Deep Learning (DL)?</strong></p><p id="17f5a1d7-dea4-806e-a8bd-c4a764fab6e7" class=""><strong>Deep Learning</strong> is a subset of machine learning that uses neural networks with many layers (hence the &quot;deep&quot; part). These neural networks are designed to recognize complex patterns in large amounts of data, such as images, audio, or text.</p><p id="17f5a1d7-dea4-80d9-98f2-e04d7cae0076" class="">
+</p><p id="17f5a1d7-dea4-80fc-b871-f419ab6caff2" class=""><strong>How Deep Learning Works:</strong></p><ul id="17f5a1d7-dea4-803a-bc10-c44ba33aeb6f" class="bulleted-list"><li style="list-style-type:disc"><strong>Neural Networks:</strong> These are algorithms modeled after the human brain. They consist of layers of nodes (neurons) that process information. Deep learning networks can have many layers (hence &quot;deep&quot;).</li></ul><ul id="17f5a1d7-dea4-80c1-9123-e2a29ad543c5" class="bulleted-list"><li style="list-style-type:disc"><strong>Training:</strong> The model learns by adjusting the connections (weights) between neurons based on the input data.</li></ul><p id="17f5a1d7-dea4-80c6-b5b0-e636b4e8f29e" class="">
+</p><p id="17f5a1d7-dea4-8084-a351-c96e3a98a79d" class=""><strong>Differences Between Machine Learning (ML) and Deep Learning (DL):</strong></p><ol type="1" id="17f5a1d7-dea4-802d-8f28-e926cee030d0" class="numbered-list" start="1"><li><strong>Complexity of Models:</strong><ul id="17f5a1d7-dea4-800d-b6f7-c23319facc81" class="bulleted-list"><li style="list-style-type:disc"><strong>ML</strong> models tend to be simpler and require less computational power.</li></ul><ul id="17f5a1d7-dea4-80c8-a628-e83a37c01c7f" class="bulleted-list"><li style="list-style-type:disc"><strong>DL</strong> models are more complex, with many layers, and require much more data and computational power.</li></ul></li></ol><ol type="1" id="17f5a1d7-dea4-80b4-a6ab-ec4e1df24b86" class="numbered-list" start="2"><li><strong>Data Requirements:</strong><ul id="17f5a1d7-dea4-8012-9e2d-d4c07a257c67" class="bulleted-list"><li style="list-style-type:disc"><strong>ML</strong> can work with smaller datasets.</li></ul><ul id="17f5a1d7-dea4-80b4-a9ff-e20f3c84b043" class="bulleted-list"><li style="list-style-type:disc"><strong>DL</strong> requires large datasets to perform well, as it needs to learn intricate patterns.</li></ul></li></ol><ol type="1" id="17f5a1d7-dea4-8036-9a1c-f79197add3d0" class="numbered-list" start="3"><li><strong>Feature Engineering:</strong><ul id="17f5a1d7-dea4-805a-903f-c403e916189c" class="bulleted-list"><li style="list-style-type:disc">In <strong>ML</strong>, you often have to manually select and design features (important pieces of data).</li></ul><ul id="17f5a1d7-dea4-807c-98e6-f67b488e8338" class="bulleted-list"><li style="list-style-type:disc">In <strong>DL</strong>, the algorithm automatically learns to extract important features from the raw data (for example, in image recognition, it learns to detect edges, shapes, etc.).</li></ul></li></ol><ol type="1" id="17f5a1d7-dea4-80b8-809f-eb1d3240b6d0" class="numbered-list" start="4"><li><strong>Performance:</strong><ul id="17f5a1d7-dea4-8058-ba21-f7c809e6da43" class="bulleted-list"><li style="list-style-type:disc"><strong>ML</strong> can be very good for smaller tasks with simpler data.</li></ul><ul id="17f5a1d7-dea4-8045-8ca2-d0eadcf6b762" class="bulleted-list"><li style="list-style-type:disc"><strong>DL</strong> is particularly good for complex tasks like speech recognition, image classification, and natural language processing.</li></ul></li></ol><p id="17f5a1d7-dea4-8025-9097-e26fc6e4e614" class="">
+</p></details></li></ul><ul id="17f5a1d7-dea4-80ae-89fc-cce5f54b057c" class="toggle"><li><details open=""><summary><strong>Inducing AI using ML and DL</strong></summary><p id="17f5a1d7-dea4-805a-803f-c246a9a5d38b" class=""><strong>How does Machine Learning and Deep Learning induce AI?</strong></p><ul id="17f5a1d7-dea4-80a2-8142-c366f373e7f0" class="bulleted-list"><li style="list-style-type:disc"><strong>ML and AI:</strong> Machine learning is one of the key ways AI is developed. It allows machines to improve their performance on tasks over time by learning from data. ML provides the foundation for creating systems that can make intelligent decisions based on data.</li></ul><ul id="17f5a1d7-dea4-8080-83d0-c3ea0c2b30a0" class="bulleted-list"><li style="list-style-type:disc"><strong>DL and AI:</strong> Deep learning, as a more advanced form of ML, enables AI systems to work on more complex tasks. By using deep neural networks, deep learning allows AI systems to handle things like image recognition, speech understanding, and language translation. These are the types of tasks that mimic human intelligence.</li></ul><p id="17f5a1d7-dea4-80b5-b94f-e980f8acdd4d" class="">
+</p><p id="17f5a1d7-dea4-800a-972a-fc9648c699d3" class="">For example:</p><ul id="17f5a1d7-dea4-80e4-ab08-f499ced0782c" class="bulleted-list"><li style="list-style-type:disc">A <strong>ML</strong> model might classify whether an email is spam or not based on a set of features like the sender&#x27;s address, subject, and content.</li></ul><ul id="17f5a1d7-dea4-8043-880c-ca27af14bbcf" class="bulleted-list"><li style="list-style-type:disc">A <strong>DL</strong> model might be used to recognize objects in images (like identifying a cat in a photo) by learning directly from the pixel data.</li></ul><p id="17f5a1d7-dea4-80cd-bb6a-d0995c71720c" class="">
+</p><p id="17f5a1d7-dea4-80d4-9063-f161ae7a454f" class="">Both <strong>ML</strong> and <strong>DL</strong> contribute to AI systems becoming more powerful and capable of solving more complex problems.</p><p id="17f5a1d7-dea4-80e5-b9bd-da6dcbf1b317" class="">
+</p></details></li></ul><ul id="17f5a1d7-dea4-806e-8bd2-ca1e6a8a4596" class="toggle"><li><details open=""><summary><strong>How to Choose an AI Project?</strong></summary><p id="17f5a1d7-dea4-8028-b1e6-d1013dc3cc57" class="">When choosing an AI project, here are some things to consider:</p><ol type="1" id="17f5a1d7-dea4-803c-a2e8-dfd84a1829da" class="numbered-list" start="1"><li><strong>Define the Problem Clearly:</strong><p id="17f5a1d7-dea4-800a-a4a7-fbba08531787" class="">Make sure the problem is well-defined and that AI is the right approach. For example, if you&#x27;re trying to predict customer churn, AI can help, but if the problem is simpler (like calculating averages), AI might not be necessary.</p></li></ol><ol type="1" id="17f5a1d7-dea4-8042-a5ea-fff2e3bf8853" class="numbered-list" start="2"><li><strong>Available Data:</strong><p id="17f5a1d7-dea4-80ff-85af-d1472aed867d" class="">AI and machine learning rely on data. Ensure that you have enough high-quality data to train the model. For example, if you&#x27;re working on image recognition, you&#x27;ll need a large dataset of labeled images.</p></li></ol><ol type="1" id="17f5a1d7-dea4-801e-a2f6-fee397e0ba4a" class="numbered-list" start="3"><li><strong>Complexity of the Task:</strong><p id="17f5a1d7-dea4-8096-8f98-e9dd4f0ddfc0" class="">Choose a project that matches the complexity of the task with the type of AI you are using. For example, a simple predictive model might only need machine learning, while a complex task like autonomous driving might require deep learning.</p></li></ol><ol type="1" id="17f5a1d7-dea4-807f-aa05-e1f155aca34f" class="numbered-list" start="4"><li><strong>Resources and Tools:</strong><p id="17f5a1d7-dea4-8063-b652-fc17a6b50eb7" class="">Consider the computational resources (like GPUs) you’ll need for training models, especially for deep learning tasks. Also, make sure you have access to the necessary software tools and libraries (e.g., TensorFlow, PyTorch).</p></li></ol><ol type="1" id="17f5a1d7-dea4-802d-99db-c411b05b67d7" class="numbered-list" start="5"><li><strong>Impact and Usefulness:</strong><p id="17f5a1d7-dea4-8021-946a-d33af9853184" class="">Think about how useful the AI project will be. Will it solve a real-world problem? Can it bring value to people or businesses? Projects that have clear, impactful goals are often more successful.</p></li></ol><ol type="1" id="17f5a1d7-dea4-8096-afd0-dfab5656ee85" class="numbered-list" start="6"><li><strong>Feasibility and Timeframe:</strong><p id="17f5a1d7-dea4-808e-84ec-e78d4531903b" class="">Assess whether you have the time, budget, and technical skills needed to complete the project successfully. Deep learning projects, for example, may take longer and require more computational resources.</p></li></ol></details></li></ul><p id="17f5a1d7-dea4-8086-a8f3-f7f24899d736" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
