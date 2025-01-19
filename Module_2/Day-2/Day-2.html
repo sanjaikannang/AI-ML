@@ -1,0 +1,881 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Day 2</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1805a1d7-dea4-8024-8f38-e11aeab5ffa5" class="page sans"><header><h1 class="page-title">Day 2</h1><p class="page-description"></p></header><div class="page-body"><h2 id="1805a1d7-dea4-80b1-8fc2-ee1ac8d6af0c" class="">Python Basics</h2><h3 id="1805a1d7-dea4-80a1-8de1-d64a0370914c" class="">Variables</h3><p id="1805a1d7-dea4-80f5-abd6-d3498d17314c" class="">                   → Variable is a name that is used to refer to memory location. Python variable is also known as an identifier and used to hold value.</p><p id="1805a1d7-dea4-8018-abe1-f5230e49c197" class=""><strong>Example : </strong>      a = 50 </p><p id="1805a1d7-dea4-8039-a02c-fb814637b082" class="">
+</p><h3 id="1805a1d7-dea4-8073-a43e-e69304a3651f" class="">Data types</h3><ol type="1" id="1805a1d7-dea4-80aa-991f-ecc9d85b8fe0" class="numbered-list" start="1"><li>String         →       str        →        Anything   “  “, ‘ ‘</li></ol><ol type="1" id="1805a1d7-dea4-807a-8124-f296f18200eb" class="numbered-list" start="2"><li>Integer       →       int        →        Any Number Without Decimal. (  +∞, -∞  )</li></ol><ol type="1" id="1805a1d7-dea4-806b-a15a-d5fbbae7642e" class="numbered-list" start="3"><li>Float           →       float     →        Any Number With Decimal.  (  +∞, -∞  )</li></ol><ol type="1" id="1805a1d7-dea4-809c-8ad2-c20008ae3c0b" class="numbered-list" start="4"><li>Boolean     →       bool     →        True, False</li></ol><p id="1805a1d7-dea4-802e-bd81-ca7ee172bcc8" class="">
+</p><p id="1805a1d7-dea4-80a6-a6f2-fe8ae79678c8" class=""><strong>Example : </strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-804f-9107-fdbfb6f2fbb7" class="code"><code class="language-Python">name = &quot;sanjai&quot;
+age = 22
+is_student = True
+profession = &quot;software develper&quot;
+height = 5.8
+weight = 65
+
+print (name)
+print (age)
+print (is_student)
+print (profession)
+print (height)
+print (height)
+
+OutPut:
+
+sanjai
+22
+True
+software develper
+5.8
+5.8
+
+----------------------------------------------------------------------------------------
+
+name = &quot;sanjai&quot;
+age = 22
+is_student = True
+profession = &quot;software develper&quot;
+height = 5.8
+weight = 65
+
+// &#x27;f&#x27; - Formatting
+
+print (f&quot;my name is {name}, my age is {age}, mt profession is an {profession}, my height is {height}, my weight is {weight}&quot;)
+</code></pre><p id="1805a1d7-dea4-8001-bd13-f430f07548d6" class="">
+</p><h3 id="1805a1d7-dea4-807d-8dbc-f9f5a492c12e" class="">Type Casting</h3><p id="1805a1d7-dea4-8039-91b1-dd5174a5710a" class="">         → Change one data type of data yo another data type is called type casting.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80dd-8a86-fb29eb049c0c" class="code"><code class="language-Python">user_name = “sanjai kannan”
+
+type(name)
+
+OutPut:
+
+str</code></pre><p id="1805a1d7-dea4-8000-ae0a-dbd2e703e816" class="">
+</p><h3 id="1805a1d7-dea4-8016-a9e3-d1ab44e1c4a4" class="">Dynamic Input</h3><p id="1805a1d7-dea4-8047-8d08-e49085e9e9a4" class="">                → Taking input from console ot User</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-804f-b71a-e9b53229dbc8" class="code"><code class="language-Python">name = input(&quot;Enter your name: &quot;)
+print(f&quot;welcome {name}&quot;)
+
+OutPut:
+
+welcome sanjai</code></pre><p id="1805a1d7-dea4-8043-9e8a-c06f7a54a8d4" class="">
+</p><h3 id="1805a1d7-dea4-8092-b6e6-c961f13aa49e" class="">Operators in Python</h3><p id="1805a1d7-dea4-80e5-94ff-e8729914cd2e" class="">             → these are the operators in Python</p><table id="1805a1d7-dea4-804a-a3bf-f5b8dc5deda3" class="simple-table"><thead class="simple-table-header"><tr id="41074fe8-f0cf-40a9-a0d1-3e0ab4545070"><th id="&gt;MJP" class="simple-table-header-color simple-table-header" style="width:230px"><strong>Operator</strong></th><th id="obZp" class="simple-table-header-color simple-table-header" style="width:230px"><strong>Name</strong></th><th id="dKvx" class="simple-table-header-color simple-table-header" style="width:230px"><strong>Example</strong></th></tr></thead><tbody><tr id="5280032b-1162-491b-b074-46d447033387"><td id="&gt;MJP" class="" style="width:230px">+</td><td id="obZp" class="" style="width:230px">Addition </td><td id="dKvx" class="" style="width:230px">x + y</td></tr><tr id="81c10d7a-30ed-4907-a61b-3acba2c85216"><td id="&gt;MJP" class="" style="width:230px">-</td><td id="obZp" class="" style="width:230px">Subraction</td><td id="dKvx" class="" style="width:230px">x - y</td></tr><tr id="1805a1d7-dea4-807c-8692-c986bd8f3118"><td id="&gt;MJP" class="" style="width:230px">*</td><td id="obZp" class="" style="width:230px">Multiplication</td><td id="dKvx" class="" style="width:230px">x * y</td></tr><tr id="1805a1d7-dea4-807a-a98c-d4ee9d5dcdcb"><td id="&gt;MJP" class="" style="width:230px">/</td><td id="obZp" class="" style="width:230px">Divison</td><td id="dKvx" class="" style="width:230px">x / y</td></tr><tr id="1805a1d7-dea4-801d-8da5-cb90566e0884"><td id="&gt;MJP" class="" style="width:230px">%</td><td id="obZp" class="" style="width:230px">Modules</td><td id="dKvx" class="" style="width:230px">x % y</td></tr><tr id="1805a1d7-dea4-80d8-a707-e28dea503d96"><td id="&gt;MJP" class="" style="width:230px">**</td><td id="obZp" class="" style="width:230px">Exponentiation</td><td id="dKvx" class="" style="width:230px">x ** y</td></tr><tr id="1805a1d7-dea4-80aa-9b44-d3f117ccc404"><td id="&gt;MJP" class="" style="width:230px">//</td><td id="obZp" class="" style="width:230px">Floor Division</td><td id="dKvx" class="" style="width:230px">x // y</td></tr></tbody></table><p id="1805a1d7-dea4-8071-b25f-e23fff7668ad" class="">
+</p><p id="1805a1d7-dea4-8025-bb7c-d2c9f69a2cd5" class=""><strong>Example:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80b7-bcb3-c5a18d903f73" class="code"><code class="language-Python">a = 10
+b = 20
+
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a%b)
+
+OutPut:
+
+30
+-10
+200
+0.5
+10</code></pre><p id="1805a1d7-dea4-8096-9250-f3ef2c56b445" class="">
+</p><h3 id="1805a1d7-dea4-8079-aede-d5b86ab80f43" class="">Boolean </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80a0-9f73-f6234b913b4f" class="code"><code class="language-Python">status = int(False)
+print(status)
+
+OutPut:
+
+0
+
+----------------------------------------------------------------------------------------
+
+status = int(True)
+print(status)
+
+OutPut:
+
+1
+
+----------------------------------------------------------------------------------------
+&quot;True&quot; = 1
+&quot;False&quot; = 0
+
+True + True + True + False + True + False = ?
+  1  +   1  +   1  +   0   +   1  +   0   = 4</code></pre><p id="1805a1d7-dea4-80b6-b813-ce942243d0a6" class="">
+</p><h3 id="1805a1d7-dea4-802b-898e-ecfc82b49d38" class="">Strings</h3><p id="1805a1d7-dea4-800d-b995-e5df89025c76" class="">
+</p><p id="1805a1d7-dea4-80ba-871e-e972deb698c6" class="">                                          - ve Indexing</p><table id="1805a1d7-dea4-8061-b4b5-fe12b09416b7" class="simple-table"><tbody><tr id="1805a1d7-dea4-80d3-a9f3-fec3f8646c89"><td id="Zli&lt;" class="" style="width:43px">-13</td><td id="H`ix" class="" style="width:39px">-12</td><td id="@XKl" class="" style="width:35px">-11</td><td id="bv{r" class="" style="width:42px">-10</td><td id="zklS" class="" style="width:35px">-9</td><td id="b|Ws" class="" style="width:35px">-8</td><td id="&lt;{Kj" class="" style="width:35px">-7</td><td id=";ona" class="" style="width:35px">-6</td><td id="JwR_" class="" style="width:35px">-5</td><td id="^oZK" class="" style="width:35px">-4</td><td id="`Txn" class="" style="width:35px">-3</td><td id="DXB]" class="" style="width:35px">-2</td><td id="XI~y" class="" style="width:35px">-1</td></tr><tr id="93315c30-d261-4f0a-b3b5-78aa16c740b3"><td id="Zli&lt;" class="" style="width:43px">s</td><td id="H`ix" class="" style="width:39px">a</td><td id="@XKl" class="" style="width:35px">n</td><td id="bv{r" class="" style="width:42px">j</td><td id="zklS" class="" style="width:35px">a</td><td id="b|Ws" class="" style="width:35px">i</td><td id="&lt;{Kj" class="" style="width:35px"></td><td id=";ona" class="" style="width:35px">k</td><td id="JwR_" class="" style="width:35px">a</td><td id="^oZK" class="" style="width:35px">n</td><td id="`Txn" class="" style="width:35px">n</td><td id="DXB]" class="" style="width:35px">a</td><td id="XI~y" class="" style="width:35px">n</td></tr><tr id="1805a1d7-dea4-8092-a5dd-dab6a015ee0c"><td id="Zli&lt;" class="" style="width:43px">0</td><td id="H`ix" class="" style="width:39px">1</td><td id="@XKl" class="" style="width:35px">2</td><td id="bv{r" class="" style="width:42px">3</td><td id="zklS" class="" style="width:35px">4</td><td id="b|Ws" class="" style="width:35px">5</td><td id="&lt;{Kj" class="" style="width:35px">6</td><td id=";ona" class="" style="width:35px">7</td><td id="JwR_" class="" style="width:35px">8</td><td id="^oZK" class="" style="width:35px">9</td><td id="`Txn" class="" style="width:35px">10</td><td id="DXB]" class="" style="width:35px">11</td><td id="XI~y" class="" style="width:35px">12</td></tr></tbody></table><p id="1805a1d7-dea4-809c-9956-fa6e08032dcd" class="">                                          + ve Indexing</p><p id="1805a1d7-dea4-800f-8bf8-eac303f7fc11" class=""><strong>Total Character = 13</strong></p><p id="1805a1d7-dea4-8061-bf71-fa4ddf8cd0ef" class=""><strong>index → 0 - 12</strong></p><p id="1805a1d7-dea4-8016-8436-c0c034e8e501" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80ba-b95b-d924a9e5212c" class="code"><code class="language-Python">user_name = &quot;sanjai kannan&quot;
+
+print(user_name[0])   // &#x27;s&#x27;
+print(user_name[4])   // &#x27;a&#x27;
+
+
+print(user_name[-2])   // &#x27;a&#x27;
+print(user_name[-10])   // &#x27;j&#x27;</code></pre><p id="1805a1d7-dea4-804e-aa22-eba2be12fdb1" class="">
+</p><h3 id="1805a1d7-dea4-80bf-b1e0-eaf5a2ff3216" class="">Slicing</h3><p id="1805a1d7-dea4-80d5-bcd9-e2c63a9053fa" class="">        → user_name[ 0 : 8] last value not included</p><p id="1805a1d7-dea4-800a-ba92-d45df06184ee" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8020-a749-cb029407ba51" class="code"><code class="language-Python">user_name = &quot;sanjai kannan&quot;
+print(user_name[0:8])
+
+OutPut:
+
+sanjai k</code></pre><p id="1805a1d7-dea4-8044-aa08-ca54fc097725" class="">
+</p><h3 id="1805a1d7-dea4-8000-a31d-ff3e25d5a4f0" class=""><strong>Upper and Lower</strong></h3><p id="1805a1d7-dea4-8012-b92b-c2ef1a625cca" class="">    → Convert Uppercase to Lowercase </p><p id="1805a1d7-dea4-80c0-bb60-fca9bd61a978" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8060-b829-eea5ec9e0ed7" class="code"><code class="language-Python">user_name = &#x27;Sanjai KANNAN&#x27;
+
+// Upper Case
+print(user_name.upper())
+
+// Lower Case
+print(user_name.lower())
+
+
+OutPut:
+
+SANJAI KANNAN
+
+sanjai kannan</code></pre><p id="1805a1d7-dea4-809e-8253-f31be12e3970" class="">
+</p><h3 id="1805a1d7-dea4-8012-afd6-eab228b9f89b" class="">Capitalize / Center / Count / Find / isalnum  / Replace / lstrip / rstrip / strip / startwith / swapcase / partition</h3><h3 id="1805a1d7-dea4-803a-b478-c2c055b343d9" class="">Capitalize </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80ef-b099-c27781e2959a" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.capitalize())
+
+OutPut:
+
+Ssanjai kannan</code></pre><p id="1805a1d7-dea4-804d-9556-f5292e684f2b" class="">
+</p><h3 id="1805a1d7-dea4-808a-85b3-d04ae10e7a9f" class="">Center </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80c5-ac54-c5a9aba29dd6" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.center(50))
+
+OutPut:
+
+                  ssanjai KANNAN                  </code></pre><p id="1805a1d7-dea4-80b2-a19c-c51f4d40614f" class="">
+</p><h3 id="1805a1d7-dea4-8082-83ad-cd98b92003b7" class="">Count </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80e0-9c66-fbe1edf0b874" class="code"><code class="language-undefined">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.count(&#x27;a&#x27;))
+
+OutPut:
+
+2</code></pre><p id="1805a1d7-dea4-8050-a36e-d89c55089ea2" class="">
+</p><h3 id="1805a1d7-dea4-8091-9bbf-e359f9eabdab" class=""><strong>Find </strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8006-869e-dc7ae349a728" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.find(&#x27;a&#x27;))
+
+OutPut:
+
+2</code></pre><p id="1805a1d7-dea4-8037-8f4b-d1717ef46f3f" class="">
+</p><h3 id="1805a1d7-dea4-8017-84d8-ddffffe019a7" class="">isalnum  </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80db-8da2-ca8290a98032" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.isalnum())
+
+OutPut:
+
+False</code></pre><p id="1805a1d7-dea4-8040-8168-da0b9bfba213" class="">
+</p><h3 id="1805a1d7-dea4-80dc-8317-dfaafa6ba5d3" class="">Replace </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8012-ae6a-c576a5d32a21" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.replace(&#x27;a&#x27;,&#x27;A&#x27;))
+
+OutPut:
+
+ssAnjAi KANNAN</code></pre><p id="1805a1d7-dea4-8035-af6e-dc9171328cb8" class="">
+</p><h3 id="1805a1d7-dea4-80a1-9c1d-e9a0c7dd112e" class="">lstrip / rstrip / strip</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8093-9fc0-c91f443d2e65" class="code"><code class="language-Python">user_name = &#x27;           ssanjai KANNAN             &#x27;
+print(user_name.lstrip())
+
+OutPut:
+
+ssanjai KANNAN             
+
+----------------------------------------------------------------------------------------
+
+user_name = &#x27;           ssanjai KANNAN             &#x27;
+print(user_name.rstrip())
+
+OutPut:
+
+           ssanjai KANNAN
+           
+----------------------------------------------------------------------------------------
+
+user_name = &#x27;           ssanjai KANNAN             &#x27;
+print(user_name.strip())
+
+OutPut:
+
+ssanjai KANNAN</code></pre><p id="1805a1d7-dea4-8076-a203-efed8ea26586" class="">
+</p><h3 id="1805a1d7-dea4-800c-b191-cf5fcb372f1d" class="">startwith</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8056-8b5b-c5f18606c2c9" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.startswith(&#x27;s&#x27;))
+
+OutPut:
+
+True</code></pre><h3 id="1805a1d7-dea4-800e-8b18-d734fb5d0dd8" class="">swapcase </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-8056-8039-c9e4418e6d6f" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.swapcase())
+
+OutPut:
+
+SSANJAI kannan</code></pre><h3 id="1805a1d7-dea4-8040-a785-ea363826ec73" class="">partition</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1805a1d7-dea4-80f3-9bdc-f455006d86c8" class="code"><code class="language-Python">user_name = &#x27;ssanjai KANNAN&#x27;
+print(user_name.partition(&#x27;K&#x27;))
+
+OutPut:
+
+(&#x27;ssanjai &#x27;, &#x27;K&#x27;, &#x27;ANNAN&#x27;)</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
