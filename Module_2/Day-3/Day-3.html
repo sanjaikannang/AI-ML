@@ -1,0 +1,1051 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Day-3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1815a1d7-dea4-801e-ab3f-d54cb40e3135" class="page sans"><header><h1 class="page-title">Day-3</h1><p class="page-description"></p></header><div class="page-body"><h2 id="1815a1d7-dea4-80d8-b9eb-ed1d846a227c" class="">List</h2><p id="1815a1d7-dea4-8062-b4f1-d3a2a32f4815" class=""><strong>             → list</strong> is an ordered collection of items that can be of any type (integers, strings, objects, etc.). Lists are mutable, meaning you can modify them after they are created. Lists are defined using square brackets <code>[]</code>, and the elements are separated by commas.<br/><br/></p><h3 id="1815a1d7-dea4-80fe-b1e5-e9cf7de7635f" class="">Basic Example:</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8033-97e0-f31ecf565870" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Defining a list
+my_list = [1, 2, 3, 4, 5]
+print(my_list)  
+
+Output: 
+
+[1, 2, 3, 4, 5]</code></pre><h3 id="1815a1d7-dea4-80bb-ab54-f3d111aee6b4" class="">Accessing List Element</h3><p id="1815a1d7-dea4-8075-8310-ee05ca156c43" class="">You can access individual elements of a list using indices (0-based index):</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80dc-9800-fc83870e763e" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_list = [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]
+print(my_list[0])  # Output: apple
+print(my_list[1])  # Output: banana
+print(my_list[2])  # Output: cherry</code></pre><h3 id="1815a1d7-dea4-80a1-97af-c4b918d21913" class="">Modifying Lists:</h3><p id="1815a1d7-dea4-807a-b66e-eb531c132eed" class="">Since lists are mutable, you can modify elements.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-801e-a375-ec5f7449d99f" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_list = [10, 20, 30]
+my_list[1] = 25  # Change the second element
+print(my_list)  
+
+Output: 
+
+[10, 25, 30]</code></pre><h3 id="1815a1d7-dea4-802e-b29a-fbf2e2aaf594" class="">Adding Elements to a List:</h3><p id="1815a1d7-dea4-804b-9a55-d3bd27ee5b54" class="">You can add elements using <code>append()</code> or <code>insert()</code>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80eb-8bb4-f48db1d51c7f" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Append adds to the end of the list
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  
+
+Output: 
+
+[1, 2, 3, 4]
+
+
+# Insert adds at a specific position
+my_list.insert(1, &#x27;apple&#x27;)
+print(my_list)  
+
+Output: 
+
+[1, &#x27;apple&#x27;, 2, 3, 4]</code></pre><h3 id="1815a1d7-dea4-8054-b5b6-e2913606642b" class="">Removing Elements from a List:</h3><p id="1815a1d7-dea4-8003-9acd-d3f3c9d9c13d" class="">You can remove elements using <code>remove()</code>, <code>pop()</code>, or <code>del</code>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-809c-94aa-d2e56630efc7" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_list = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]
+
+# Using remove (removes by value)
+my_list.remove(&#x27;b&#x27;)
+print(my_list)  
+
+Output: 
+
+[&#x27;a&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]
+
+
+# Using pop (removes by index, default is last item)
+my_list.pop()
+print(my_list)  
+
+Output: 
+
+[&#x27;a&#x27;, &#x27;c&#x27;]
+
+# Using del (removes by index)
+del my_list[0]
+print(my_list)  
+
+Output: 
+
+[&#x27;c&#x27;]</code></pre><h3 id="1815a1d7-dea4-802d-99d9-cda8b5504c30" class="">Other Useful List Operations:</h3><ol type="1" id="1815a1d7-dea4-8040-a2c3-eacaa96fbd58" class="numbered-list" start="1"><li><strong>List Length</strong>: Get the number of elements.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-808f-b43d-ed5968604ac0" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_list = [1, 2, 3]
+print(len(my_list))
+
+Output: 
+
+3</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8033-8a97-d6e2ac04a4b0" class="numbered-list" start="2"><li><strong>List Slicing</strong>: Get a part of the list.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8001-bad4-d8f4c2043c61" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_list = [10, 20, 30, 40, 50]
+print(my_list[1:4])  
+
+Output: 
+
+[20, 30, 40]</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8083-a179-da410a5ff85b" class="numbered-list" start="3"><li><strong>List Concatenation</strong>: Combine two lists.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-804c-a3b9-db3c9bdbb7a1" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">list1 = [1, 2]
+list2 = [3, 4]
+print(list1 + list2)  
+
+Output: 
+
+[1, 2, 3, 4]</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8031-8d81-ee98104cc9c9" class="numbered-list" start="4"><li><strong>List Repetition</strong>: Repeat elements in the list.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-808e-af53-e6227ee7bd19" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">list1 = [1, 2]
+print(list1 * 3)  
+
+Output: 
+
+[1, 2, 1, 2, 1, 2]</code></pre></li></ol><h3 id="1815a1d7-dea4-802e-8a60-e2a4756eef66" class="">Nested Lists:</h3><p id="1815a1d7-dea4-8072-822a-ca8c3da5d8d2" class="">You can have lists inside other lists (nested lists).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80fc-bd9a-c4b685ea7de3" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">nested_list = [[1, 2], [3, 4], [5, 6]]
+print(nested_list[0])  
+
+Output: 
+
+[1, 2]
+
+print(nested_list[1][1])  
+
+Output: 
+
+4</code></pre><h3 id="1815a1d7-dea4-8008-983e-ecc9032f27e3" class="">List Comprehension:</h3><p id="1815a1d7-dea4-80dd-bdab-d65df0e0b12a" class="">List comprehension provides a concise way to create lists.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-800d-979b-cdab09e8033b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Creating a list of squares of numbers from 0 to 4
+squares = [x ** 2 for x in range(5)]
+print(squares)  
+
+Output: 
+
+[0, 1, 4, 9, 16]</code></pre><p id="1815a1d7-dea4-8034-aea8-dc2847300d66" class="">
+</p><p id="1815a1d7-dea4-8081-88cd-d7454b8a02de" class="">
+</p><hr id="1815a1d7-dea4-80d7-bb7d-c79e54c85044"/><p id="1815a1d7-dea4-8071-a4e1-d1bfa8131f3b" class="">
+</p><h2 id="1815a1d7-dea4-8024-86e6-f9c31252da8b" class="">Set     </h2><p id="1815a1d7-dea4-8067-97af-eb534d625edf" class="">          → A <strong>set</strong> is an unordered collection of unique elements. Sets are useful when you want to store multiple values but don&#x27;t care about their order and need to ensure that no duplicate values are present. A set is defined using curly braces <code>{}</code> or the <code>set()</code> function.<br/><br/></p><h3 id="1815a1d7-dea4-8093-b14f-cda0ca03b83c" class="">Basic Example:</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-802f-b724-d72d645d7397" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Defining a set
+my_set = {1, 2, 3, 4, 5}
+print(my_set)  
+
+Output: 
+
+{1, 2, 3, 4, 5}</code></pre><h3 id="1815a1d7-dea4-8018-89e9-dc9e9e4437dc" class="">Adding Elements to a Set:</h3><p id="1815a1d7-dea4-8020-96cc-cd69cf9399a6" class="">You can add elements using the <code>add()</code> method. If you try to add a duplicate element, it will not be added since sets don’t allow duplicates.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-802a-8644-d9e1618f8d47" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_set = {1, 2, 3}
+my_set.add(4)  # Adds 4 to the set
+print(my_set)  # Output: {1, 2, 3, 4}
+
+# Adding a duplicate element (won&#x27;t be added)
+my_set.add(2)
+print(my_set)  
+
+Output: 
+
+{1, 2, 3, 4} (no change)</code></pre><h3 id="1815a1d7-dea4-80c5-b8cf-d0eff1ecc598" class="">Removing Elements from a Set:</h3><p id="1815a1d7-dea4-8057-8911-c81d9e84e7af" class="">You can remove elements using <code>remove()</code> or <code>discard()</code>. The difference is that <code>remove()</code> will raise a KeyError if the element is not found, while <code>discard()</code> will not.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80ee-8857-c726efabb650" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_set = {1, 2, 3, 4}
+
+# Using remove (raises KeyError if element is not found)
+my_set.remove(3)
+print(my_set)  
+
+Output: {1, 2, 4}
+
+# Using discard (does not raise KeyError)
+my_set.discard(5)  # No effect, 5 is not in the set
+print(my_set)  
+
+Output: 
+
+{1, 2, 4}</code></pre><h3 id="1815a1d7-dea4-80af-be6b-de6724607605" class="">Set Operations:</h3><ol type="1" id="1815a1d7-dea4-8097-89b0-d4f0ddef987b" class="numbered-list" start="1"><li><strong>Union</strong>: Combines two sets, removing duplicates.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80fb-809a-df745fa14f16" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+union_set = set1 | set2  # Or set1.union(set2)
+print(union_set)  
+
+Output: 
+
+{1, 2, 3, 4, 5}</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-80cb-ab91-fc6e50bcdd92" class="numbered-list" start="2"><li><strong>Intersection</strong>: Returns common elements between two sets.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80e9-941d-f5de7b0fbcb8" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+intersection_set = set1 &amp; set2  # Or set1.intersection(set2)
+print(intersection_set)  
+
+Output: 
+
+{3}</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-80bd-9730-c4a19e47edd9" class="numbered-list" start="3"><li><strong>Difference</strong>: Returns elements that are in the first set but not in the second.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80b0-8ef8-f422a8bb8922" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+difference_set = set1 - set2  # Or set1.difference(set2)
+print(difference_set)  
+
+Output: 
+
+{1, 2}</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8099-a10b-cf4373d4f07b" class="numbered-list" start="4"><li><strong>Symmetric Difference</strong>: Returns elements that are in either of the sets but not in both.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-800f-875a-f39ac58ea2d6" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+symmetric_difference_set = set1 ^ set2  # Or set1.symmetric_difference(set2)
+print(symmetric_difference_set)  
+
+Output: 
+
+{1, 2, 4, 5}</code></pre></li></ol><h3 id="1815a1d7-dea4-80cc-8080-ec0c39d0dea5" class="">Set Comprehension:</h3><p id="1815a1d7-dea4-805f-94f4-f3311c8993a5" class="">You can create sets in a concise way using set comprehension.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80e5-96ab-e7e915e260af" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Creating a set of squares of numbers from 0 to 4
+squares_set = {x ** 2 for x in range(5)}
+print(squares_set)  
+
+Output: 
+
+{0, 1, 4, 9, 16}</code></pre><h3 id="1815a1d7-dea4-8030-bda3-d54db25d8da2" class="">Checking Membership:</h3><p id="1815a1d7-dea4-8093-86d5-e2e83f98303d" class="">You can check if an element exists in a set using the <code>in</code> keyword.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80e0-97ff-cf7214d52aff" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_set = {1, 2, 3, 4}
+
+print(3 in my_set)  # Output: True
+print(5 in my_set)  # Output: False</code></pre><h3 id="1815a1d7-dea4-8061-816b-ed4a74ea72fa" class="">Set Length:</h3><p id="1815a1d7-dea4-80ab-b03c-c3981a56d1cd" class="">You can find the number of elements in a set using <code>len()</code>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-805c-b877-ceb2a81b5f79" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_set = {10, 20, 30}
+print(len(my_set))  
+
+Output: 
+
+3</code></pre><h3 id="1815a1d7-dea4-8032-9a2a-ce15246b8ae5" class="">Set Example with Mixed Data Types:</h3><p id="1815a1d7-dea4-8076-b2ea-e5910206467a" class="">Sets can also store mixed data types like strings, integers, and other objects.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-800b-9bd5-c312a54cbad8" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_set = {1, &quot;apple&quot;, 3.14, (1, 2)}
+print(my_set)  
+
+Output: 
+
+{1, &#x27;apple&#x27;, 3.14, (1, 2)}</code></pre><h3 id="1815a1d7-dea4-809f-ae2f-ceee00fcd0f1" class="">Set Comparison:</h3><p id="1815a1d7-dea4-8010-a814-fcf01b17c6ba" class="">You can compare sets for equality, subset, or superset relationships:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80ec-95ee-e06ae247b0cf" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">set1 = {1, 2, 3}
+set2 = {3, 2, 1}
+set3 = {4, 5, 6}
+
+print(set1 == set2)  
+
+Output: 
+
+True (since sets are unordered)
+
+print(set1 &lt; set3)   
+
+Output: 
+
+False (set1 is not a subset of set3)</code></pre><h3 id="1815a1d7-dea4-8012-b575-f0b1edff5676" class="">Set Discarding Duplicates:</h3><p id="1815a1d7-dea4-80cb-9b78-de2cea3bee0c" class="">You can use a set to automatically remove duplicates from a list:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8025-afaf-c77f0bccecad" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">list_with_duplicates = [1, 2, 2, 3, 4, 4, 5]
+unique_elements = set(list_with_duplicates)
+print(unique_elements)  
+
+Output: 
+
+{1, 2, 3, 4, 5}</code></pre><p id="1815a1d7-dea4-8022-8e7f-fb20b96cd713" class="">
+</p><p id="1815a1d7-dea4-8005-b04d-c62dd19415f3" class="">
+</p><hr id="1815a1d7-dea4-80c9-9f8c-de2290006e6b"/><p id="1815a1d7-dea4-8081-a4b8-f1534893041f" class="">
+</p><h2 id="1815a1d7-dea4-80e7-a7a2-d6b847cb1440" class="">Tuple</h2><p id="1815a1d7-dea4-8013-91e0-d7727425bf85" class="">              → A <strong>tuple</strong> is an ordered collection of elements that is <strong>immutable</strong>, meaning that once a tuple is created, its elements cannot be changed, added, or removed. Tuples are defined using parentheses <code>()</code>.</p><h3 id="1815a1d7-dea4-8019-8b3b-fb7a4ff80caf" class="">Basic Example:</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8005-a1c3-ce989932dfda" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Defining a tuple
+my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple)  
+
+Output: 
+
+(1, 2, 3, 4, 5)</code></pre><h3 id="1815a1d7-dea4-80aa-8783-fa3c566ca087" class="">Accessing Tuple Elements:</h3><p id="1815a1d7-dea4-8091-8bc9-c098301f1d5f" class="">You can access individual elements of a tuple using indices (0-based index):</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8036-8ba6-e6538012bda7" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;)
+print(my_tuple[0])  # Output: apple
+print(my_tuple[1])  # Output: banana
+print(my_tuple[2])  # Output: cherry</code></pre><h3 id="1815a1d7-dea4-80c4-bb3c-c52499c78c50" class="">Slicing Tuples:</h3><p id="1815a1d7-dea4-80a3-a290-d8968bd16488" class="">You can access a range of elements using slicing.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80d6-a360-ce77b60784a4" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (10, 20, 30, 40, 50)
+print(my_tuple[1:4])
+
+Output: 
+
+(20, 30, 40)</code></pre><h3 id="1815a1d7-dea4-8088-a48a-eb7302b68b48" class="">Nested Tuples:</h3><p id="1815a1d7-dea4-80bc-8c72-e61ccb186618" class="">Tuples can contain other tuples as elements (nested tuples).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8092-8df8-cb543963b36d" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">nested_tuple = (1, 2, (3, 4), 5)
+print(nested_tuple[2])  # Output: (3, 4)
+print(nested_tuple[2][1])  # Output: 4</code></pre><h3 id="1815a1d7-dea4-8076-b805-ca0a37e89c73" class="">Tuple Concatenation and Repetition:</h3><ol type="1" id="1815a1d7-dea4-8062-9065-fd21ffc1f3f1" class="numbered-list" start="1"><li><strong>Concatenation</strong>: Combine two or more tuples.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80cd-99cb-f4f1f84263b1" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">tuple1 = (1, 2)
+tuple2 = (3, 4)
+concatenated_tuple = tuple1 + tuple2
+print(concatenated_tuple)  
+
+Output: 
+
+(1, 2, 3, 4)</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8060-81ce-dabec72fa6a7" class="numbered-list" start="2"><li><strong>Repetition</strong>: Repeat the elements of a tuple.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8037-8e11-d493deff9eac" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">tuple1 = (1, 2)
+repeated_tuple = tuple1 * 3
+print(repeated_tuple)  
+
+Output: 
+
+(1, 2, 1, 2, 1, 2)</code></pre></li></ol><h3 id="1815a1d7-dea4-8003-9224-d3d23b4d2fdb" class="">Tuple Length:</h3><p id="1815a1d7-dea4-8013-a8d2-cc958d477b62" class="">You can find the number of elements in a tuple using <code>len()</code>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8090-b2c1-dcd1785e1b1e" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (10, 20, 30)
+print(len(my_tuple))   
+
+Output: 
+
+3</code></pre><h3 id="1815a1d7-dea4-801b-9d4b-e8a15139b009" class="">Tuple Membership:</h3><p id="1815a1d7-dea4-80b7-808f-f3b8542f455e" class="">You can check if an element exists in a tuple using the <code>in</code> keyword.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8037-b516-f3ac20b33dff" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (1, 2, 3, 4)
+print(3 in my_tuple)  # Output: True
+print(5 in my_tuple)  # Output: False</code></pre><h3 id="1815a1d7-dea4-8041-91e0-c2617fdc9f9d" class="">Unpacking Tuples:</h3><p id="1815a1d7-dea4-80ca-be13-e42325285f1f" class="">You can unpack a tuple into individual variables.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-807f-931d-f783a74bd035" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (1, 2, 3)
+a, b, c = my_tuple
+print(a)  # Output: 1
+print(b)  # Output: 2
+print(c)  # Output: 3</code></pre><h3 id="1815a1d7-dea4-8065-8795-e7f130af4576" class="">Tuple with Different Data Types:</h3><p id="1815a1d7-dea4-80a5-a860-cca5bf052be6" class="">A tuple can contain elements of different data types such as integers, strings, and even other tuples.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80a0-9216-dec9488bae04" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (1, &#x27;apple&#x27;, 3.14, (2, 3))
+print(my_tuple)  
+
+Output: 
+
+(1, &#x27;apple&#x27;, 3.14, (2, 3))</code></pre><h3 id="1815a1d7-dea4-80e0-b05a-f5a7ee42a45f" class="">One-Element Tuple:</h3><p id="1815a1d7-dea4-80ac-945d-efca5f1b6977" class="">To create a tuple with just one element, you need to include a trailing comma.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8065-bf08-d6f1494eede7" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">single_element_tuple = (5,)
+print(single_element_tuple)  
+
+Output: 
+
+(5)</code></pre><h3 id="1815a1d7-dea4-801e-ab55-de4419ff20bf" class="">Tuple Indexing and Negative Indexing:</h3><p id="1815a1d7-dea4-800e-8947-cf8b32a8b78c" class="">You can access elements using both positive and negative indices. Negative indexing starts from the end of the tuple.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8082-8648-dec8aa9ccd98" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;)
+print(my_tuple[1])  # Output: b
+print(my_tuple[-1])  # Output: e</code></pre><h3 id="1815a1d7-dea4-80fa-8b65-f57fff21a5e3" class="">Tuple Methods:</h3><ol type="1" id="1815a1d7-dea4-80fa-8cde-ce7b7b686725" class="numbered-list" start="1"><li><strong>count()</strong>: Returns the number of occurrences of an element in the tuple.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80cc-af2b-dc65d0f2f35c" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (1, 2, 2, 3, 4, 2)
+print(my_tuple.count(2))  
+
+Output: 
+
+3</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8062-a5c3-cc43451f4831" class="numbered-list" start="2"><li><strong>index()</strong>: Returns the index of the first occurrence of an element.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8004-9bb0-e89369fc7c6c" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple.index(3))  
+
+Output: 
+
+2</code></pre></li></ol><p id="1815a1d7-dea4-800f-8139-ea9e3801fa9c" class="">
+</p><p id="1815a1d7-dea4-80d2-a385-f14152ae15de" class="">
+</p><p id="1815a1d7-dea4-80ae-b575-f07c51c159c3" class="">
+</p><hr id="1815a1d7-dea4-80c7-84b0-f4d33991a12c"/><p id="1815a1d7-dea4-80bb-892c-fab3114ea24a" class="">
+</p><h2 id="1815a1d7-dea4-8022-8181-e0ffdf17e874" class=""><strong>Dictionary</strong> </h2><p id="1815a1d7-dea4-8094-ad30-e54c6032e9dd" class=""><br/>                             → A <br/><strong>dictionary</strong> is an unordered collection of key-value pairs. Each key in the dictionary is unique, and values can be of any data type. Dictionaries are defined using curly braces <code>{}</code> with the key-value pairs separated by a colon <code>:</code>.</p><h3 id="1815a1d7-dea4-8058-b965-fadea2e585a6" class="">Basic Example:</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80fc-bb52-fc12e858565f" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Defining a dictionary
+my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;city&quot;: &quot;New York&quot;}
+print(my_dict)  
+
+Output: 
+
+{&#x27;name&#x27;: &#x27;Alice&#x27;, &#x27;age&#x27;: 25, &#x27;city&#x27;: &#x27;New York&#x27;}</code></pre><h3 id="1815a1d7-dea4-80d9-bde9-cacb00ed03d4" class="">Accessing Values by Key:</h3><p id="1815a1d7-dea4-803b-a8bb-d772a0baaa52" class="">You can access the value associated with a specific key using square brackets <code>[]</code>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8020-a784-c7eae362577f" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;city&quot;: &quot;New York&quot;}
+
+print(my_dict[&quot;name&quot;])  # Output: Alice
+print(my_dict[&quot;age&quot;])   # Output: 25</code></pre><h3 id="1815a1d7-dea4-8019-bbb2-e0841c970aef" class="">Modifying Dictionary Values:</h3><p id="1815a1d7-dea4-8025-a2c3-d4ea37e3311f" class="">Since dictionaries are mutable, you can change the value of an existing key.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8066-b21d-ee593d23bb5c" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+my_dict[&quot;age&quot;] = 26  # Modify the value of &#x27;age&#x27;
+print(my_dict)  
+
+Output: 
+
+{&#x27;name&#x27;: &#x27;Alice&#x27;, &#x27;age&#x27;: 26}</code></pre><h3 id="1815a1d7-dea4-80c7-bc57-fef5ea4f6221" class="">Adding Key-Value Pairs:</h3><p id="1815a1d7-dea4-801a-9e8e-d04e7f78bfb8" class="">You can add new key-value pairs to a dictionary.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-800c-85b2-eabc5ada2c0c" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+my_dict[&quot;city&quot;] = &quot;New York&quot;  # Add a new key-value pair
+print(my_dict)  
+
+Output: 
+
+{&#x27;name&#x27;: &#x27;Alice&#x27;, &#x27;age&#x27;: 25, &#x27;city&#x27;: &#x27;New York&#x27;}</code></pre><h3 id="1815a1d7-dea4-804d-b70b-e5dfa04743cc" class="">Removing Key-Value Pairs:</h3><p id="1815a1d7-dea4-80a5-8b50-eded705bd06b" class="">You can remove key-value pairs using <code>del</code>, <code>pop()</code>, or <code>popitem()</code>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80da-a8f4-ccd63ef8f2c5" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;city&quot;: &quot;New York&quot;}
+
+# Using del (removes the key-value pair by key)
+del my_dict[&quot;city&quot;]
+print(my_dict)  
+
+Output: 
+
+{&#x27;name&#x27;: &#x27;Alice&#x27;, &#x27;age&#x27;: 25}
+
+
+# Using pop (removes the key-value pair and returns the value)
+removed_value = my_dict.pop(&quot;age&quot;)
+print(removed_value)  # Output: 25
+print(my_dict)  # Output: {&#x27;name&#x27;: &#x27;Alice&#x27;}
+
+# Using popitem (removes and returns an arbitrary key-value pair)
+item = my_dict.popitem()
+print(item)  # Output: (&#x27;name&#x27;, &#x27;Alice&#x27;)
+print(my_dict)  # Output: {}</code></pre><h3 id="1815a1d7-dea4-80a6-9391-ce60edfb54b9" class="">Dictionary Keys, Values, and Items:</h3><ol type="1" id="1815a1d7-dea4-80b3-84d1-e33494e85dd4" class="numbered-list" start="1"><li><strong>Keys</strong>: You can get a list of all the keys in the dictionary.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-803a-802f-eb1d47b3389b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;city&quot;: &quot;New York&quot;}
+print(my_dict.keys())  
+
+Output: 
+
+dict_keys([&#x27;name&#x27;, &#x27;age&#x27;, &#x27;city&#x27;])</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-802a-9eef-ea3e10928222" class="numbered-list" start="2"><li><strong>Values</strong>: You can get a list of all the values in the dictionary.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8025-8832-ec04599fc482" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">print(my_dict.values())  
+
+Output: 
+
+dict_values([&#x27;Alice&#x27;, 25, &#x27;New York&#x27;])</code></pre></li></ol><ol type="1" id="1815a1d7-dea4-8038-9aa7-cf291eb1247c" class="numbered-list" start="3"><li><strong>Items</strong>: You can get a list of all the key-value pairs in the dictionary.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8094-9c19-e3b9e4a60f09" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">print(my_dict.items())  
+
+Output: dict_items([(&#x27;name&#x27;, &#x27;Alice&#x27;), (&#x27;age&#x27;, 25), (&#x27;city&#x27;, &#x27;New York&#x27;)])</code></pre></li></ol><h3 id="1815a1d7-dea4-8064-b611-f72791694fd9" class="">Checking if a Key Exists:</h3><p id="1815a1d7-dea4-8085-b570-fd897b6b72cb" class="">You can check if a specific key exists in the dictionary using the <code>in</code> keyword.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80ce-9172-e54148456a33" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+print(&quot;name&quot; in my_dict)  # Output: True
+print(&quot;address&quot; in my_dict)  # Output: False</code></pre><h3 id="1815a1d7-dea4-808b-b0dd-e61af078a422" class="">Iterating Through a Dictionary:</h3><p id="1815a1d7-dea4-8041-96a3-d039d77103d0" class="">You can loop through the keys, values, or key-value pairs of a dictionary.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-8057-8718-ecb515167705" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;city&quot;: &quot;New York&quot;}
+
+# Iterating through keys
+for key in my_dict:
+    print(key)  
+    
+Output: 
+
+name, age, city
+
+
+# Iterating through values
+for value in my_dict.values():
+    print(value)  
+    
+Output: 
+
+Alice, 25, New York
+
+
+# Iterating through key-value pairs
+for key, value in my_dict.items():
+    print(key, &quot;:&quot;, value)
+    
+    
+Output: 
+name : Alice
+age : 25
+city : New York</code></pre><h3 id="1815a1d7-dea4-80fb-b58e-f4d0a686e373" class="">Dictionary Comprehension:</h3><p id="1815a1d7-dea4-8002-9560-cce11d405597" class="">You can create dictionaries using a concise syntax called dictionary comprehension.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80d2-a6d9-fc72132c53fb" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Create a dictionary with squares of numbers
+squares = {x: x**2 for x in range(5)}
+print(squares)  
+
+Output: 
+
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}</code></pre><h3 id="1815a1d7-dea4-8048-9871-e91396721856" class="">Nested Dictionaries:</h3><p id="1815a1d7-dea4-804b-a180-f1cbfda672d1" class="">Dictionaries can contain other dictionaries as values (nested dictionaries).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-801c-96c2-c39dd8427482" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">nested_dict = {
+    &quot;person1&quot;: {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25},
+    &quot;person2&quot;: {&quot;name&quot;: &quot;Bob&quot;, &quot;age&quot;: 30}
+}
+print(nested_dict[&quot;person1&quot;][&quot;name&quot;])  # Output: Alice
+print(nested_dict[&quot;person2&quot;][&quot;age&quot;])   # Output: 30</code></pre><h3 id="1815a1d7-dea4-80cc-9814-c318e4569afa" class="">Copying a Dictionary:</h3><p id="1815a1d7-dea4-8062-9e43-f9ab7f54ea54" class="">You can create a shallow copy of a dictionary using the <code>copy()</code> method.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-807e-97eb-d4937eb6df30" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+new_dict = my_dict.copy()
+print(new_dict)  
+
+Output: 
+
+{&#x27;name&#x27;: &#x27;Alice&#x27;, &#x27;age&#x27;: 25}</code></pre><h3 id="1815a1d7-dea4-80ac-8d70-f0b9e46aa3e5" class="">Dictionary Default Values with <code>get()</code>:</h3><p id="1815a1d7-dea4-80a6-8e35-c5c6e34ef240" class="">The <code>get()</code> method is used to access a value by its key and provides a default value if the key doesn’t exist.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1815a1d7-dea4-80de-b46a-c75f5790e2db" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+print(my_dict.get(&quot;name&quot;))  # Output: Alice
+print(my_dict.get(&quot;address&quot;, &quot;Not Available&quot;))  
+
+Output: 
+
+Not Available</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
