@@ -4,7 +4,7 @@
 
 - [Module 0: AI for Everyone](#module-0-ai-for-everyone)
 - [Module 1: Introduction to AI and Current Trends](#module-1-introduction-to-ai-and-current-trends)
-- [Module 2: Introduction to Python (Basic)](#module-2-introduction-to-python-basics)
+- [Module 2: Introduction to Python (Basic)](#module-2-introduction-to-python-basic)
 - [Module 3: Introduction to Python (Advanced)](#module-3-introduction-to-python-advanced)
 - [Module 4: Introduction to Pandas for Data Handling](#module-4-introduction-to-pandas-for-data-handling)
 - [Module 5: Introduction to SQL](#module-5-introduction-to-sql)
@@ -50,7 +50,7 @@
 
 ---
 
-## Module 2:  Introduction to Python (Basics)
+### Module 2:  Introduction to Python (Basic)
 
 
 ### Topics Covered:
