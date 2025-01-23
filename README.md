@@ -50,7 +50,7 @@
 
 ---
 
-### Module 2:  Introduction to Python (Basic)
+## Module 2: Introduction to Python (Basic)
 
 
 ### Topics Covered:
